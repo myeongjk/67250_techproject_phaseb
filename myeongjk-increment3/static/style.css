@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f5f5f7;
+    color: #153243;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+th {
+    font-weight: 700;
+}
+
+#logo {
+    width: min(330px, 100%);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem 0.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.main {
+    max-width: 50rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(0.5rem, 4vw, 1.5rem);
+    padding-right: clamp(0.5rem, 4vw, 1.5rem);
+}
+
+.main img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: #284b63;
+    font-weight: 500;
+    padding: 0.35em 0.85em;
+    border: 1px solid transparent;
+    border-radius: 0.35em;
+}
+
+nav a:hover {
+    border-color: #284b63;
+}
+
+nav a[href$="tickets.html"] {
+    color: #153243;
+    font-weight: 700;
+}
+
+#navselected {
+    color: #92ad70;
+}
+
+a.cta {
+    display: inline-block;
+    background-color: #284b63;
+    color: #f5f5f7;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.65em 1.4em;
+    font-weight: 600;
+}
+
+a.cta:hover {
+    background-color: #3d6a7d;
+    color: #f5f5f7;
+}
+
+.cta-wrap {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+footer {
+    border-top: 1px solid #284b63;
+    padding: 1.25em 1rem;
+    text-align: center;
+    color: #92ad70;
+}
+
+footer * {
+    color: #92ad70;
+}
+
+/* Ticket table (views/tickets.html) */
+.main:has(> table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.main table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.main table th {
+    padding: 12px 16px;
+    background-color: #92ad70;
+    color: #153243;
+    width: fit-content;
+}
+
+.main table tbody tr:nth-child(odd) td {
+    background-color: #f5f5f7;
+}
+
+.main table tbody tr:nth-child(even) td {
+    background-color: #dfe8d8;
+}
+
+/* Checkout page: fill viewport and center form (views/checkout.html) */
+body:has(.main > form) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body:has(.main > form) .main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkout form (views/checkout.html) */
+.main form,
+.main form p,
+.main form label,
+.main form input,
+.main form button {
+    margin: auto;
+    text-align: center;
+}
+
+.main form {
+    max-width: 22rem;
+}
+
+.main form label {
+    display: block;
+    font-weight: 500;
+}
+
+.main form input,
+.main form button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.65em 0.85em;
+    margin-top: 0.35em;
+    margin-bottom: 0.5em;
+    border: 1px solid #284b63;
+    border-radius: 0.35em;
+    font: inherit;
+    color: #153243;
+    background-color: #fff;
+}
+
+.main form button {
+    background-color: #284b63;
+    color: #f5f5f7;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.75em;
+}
+
+.main form button:hover {
+    background-color: #3d6a7d;
+}
+
+/* --- Responsive breakpoints --- */
+@media (max-width: 768px) {
+    nav a {
+        padding: 0.45em 0.7em;
+        font-size: 0.95rem;
+    }
+
+    .main table th,
+    .main table td {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        line-height: 1.45;
+    }
+
+    nav {
+        gap: 0.25rem 0.35rem;
+    }
+
+    nav a {
+        padding: 0.5em 0.55em;
+        font-size: 0.9rem;
+    }
+
+    #logo {
+        width: min(270px, 85vw);
+    }
+
+    .main table th,
+    .main table td {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    a.cta {
+        padding: 0.55em 1.1em;
+        font-size: 0.95rem;
+    }
+
+    .main form {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+}

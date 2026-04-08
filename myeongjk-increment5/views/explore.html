@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="Learn about MonoMuse—our mission, community, and story.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Explore</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body class="mono-site" onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <button type="button" class="menu-toggle header__menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open navigation menu">
+                <span class="menu-icon" aria-hidden="true">
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                </span>
+            </button>
+        </header>
+
+        <main class="main site-main explore-page">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse logo">
+            <img src="../static/monoMuse.jpeg" alt="Interior view of MonoMuse gallery space with visitors and contemporary artwork" width="606" height="384">
+
+            <h2>Our mission</h2>
+            <p>MonoMuse exists to make the dialogue between art and technology public, approachable, and unforgettable. We commission and present work that asks bold questions—about identity, machines, cities, and imagination—while keeping visitors at the center of every experience.</p>
+
+            <h2>Who we serve</h2>
+            <p>We welcome anyone curious about how culture is changing in a connected world. Our community includes:</p>
+            <ul>
+                <li>First-time museum-goers and families looking for hands-on, low-pressure entry points</li>
+                <li>Students, educators, and researchers who use our space as a living lab for ideas</li>
+                <li>Artists, designers, and technologists who prototype, exhibit, and collaborate here</li>
+                <li>Members and neighbors who return for new rotations, talks, and late-night openings</li>
+            </ul>
+
+            <h2>Founding year</h2>
+            <p>MonoMuse opened its doors in <strong>2018</strong>, born from a small collective of curators and engineers who believed museums should feel as experimental as the tools in a studio.</p>
+
+            <h2>Milestones</h2>
+            <p>From a single gallery to a city-wide conversation, a few moments shaped who we are:</p>
+            <ul>
+                <li><strong>2018</strong> — Launch of the flagship “Signal &amp; Surface” season and our first artist-in-residence program</li>
+                <li><strong>2020</strong> — Hybrid exhibitions and remote studio visits, expanding access beyond the building</li>
+                <li><strong>2022</strong> — Opening of the Immersion Wing and the youth maker fellowship</li>
+                <li><strong>2024</strong> — Regional partnership tour: MonoMuse works traveled to three partner cities</li>
+                <li><strong>2026</strong> — New late-hours program and expanded ticketing for peak exhibitions</li>
+            </ul>
+
+            <h2>Visit in person</h2>
+            <p>Planning a trip? Start on the home page for an overview, then grab tickets when you are ready—we keep a few walk-up slots each day for spontaneous explorers.</p>
+            <p class="cta-wrap"><a href="buytickets.html" class="cta cta-lg">Planning To Visit? - Buy Tickets Here</a></p>
+
+            <section class="explore-map" aria-labelledby="explore-map-heading">
+                <h2 id="explore-map-heading">Find us</h2>
+                <p class="explore-map__intro">MonoMuse is located on the Carnegie Mellon University campus in Pittsburgh, Pennsylvania.</p>
+                <div id="map" class="explore-map__canvas" role="application" aria-label="Interactive map of MonoMuse location"></div>
+            </section>
+        </main>
+
+        <div class="drawer-overlay drawer-overlay--backdrop" id="drawer-overlay" aria-hidden="true"></div>
+
+        <aside id="nav-drawer" class="aside-navigation nav-drawer" aria-hidden="true" aria-label="Site navigation">
+            <nav class="nav_bar drawer-nav" aria-label="Main pages">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html">Tickets</a>
+            </nav>
+        </aside>
+
+        <footer class="footer site-footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

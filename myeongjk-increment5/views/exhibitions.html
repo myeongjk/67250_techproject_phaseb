@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="Current and upcoming exhibitions at MonoMuse.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Exhibitions</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script>
+</head>
+<body class="mono-site" onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <button type="button" class="menu-toggle header__menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open navigation menu">
+                <span class="menu-icon" aria-hidden="true">
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                    <span class="menu-icon-row"><span class="menu-dot"></span><span class="menu-bar"></span></span>
+                </span>
+            </button>
+        </header>
+
+        <main class="main site-main exhibitions-page">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse logo">
+            <h1 class="exhibitions-page-title">Exhibitions</h1>
+
+            <section class="exhibition-row exhibition-row--image-left" aria-labelledby="exhibition-digital-dreams-heading">
+                <div class="exhibition-row__media">
+                    <img src="../static/exhibition1.webp" alt="Digital Dreams exhibition gallery view" class="exhibition-row__img" width="640" height="400">
+                </div>
+                <div class="exhibition-row__text exhibition-row__text--align-end">
+                    <h2 id="exhibition-digital-dreams-heading" class="exhibition-row__heading">Digital Dreams: Art in the Age of Algorithms</h2>
+                    <p>This exhibition explores how artists are using algorithms, artificial intelligence, and generative tools to create new forms of digital expression. Through interactive displays and dynamic visuals, visitors can see how machines and human creativity work together to produce art that evolves in real time.</p>
+                </div>
+            </section>
+
+            <section class="exhibition-row exhibition-row--image-right" aria-labelledby="exhibition-code-canvas-heading">
+                <div class="exhibition-row__text exhibition-row__text--align-start">
+                    <h2 id="exhibition-code-canvas-heading" class="exhibition-row__heading">Code &amp; Canvas: The Language of Creative Technology</h2>
+                    <p>Code &amp; Canvas highlights the ways programming has become a medium for artistic creation. Featuring works by digital artists and designers, the exhibition showcases installations, projections, and interactive pieces that reveal how lines of code can transform into immersive visual experiences.</p>
+                </div>
+                <div class="exhibition-row__media">
+                    <img src="../static/exhibition2.jpg" alt="Code &amp; Canvas exhibition installation" class="exhibition-row__img" width="640" height="400">
+                </div>
+            </section>
+
+            <section class="exhibition-video" aria-labelledby="exhibition-video-heading">
+                <h2 id="exhibition-video-heading" class="exhibition-video__heading">Exhibition film</h2>
+                <div class="exhibition-video__embed">
+                    <iframe class="exhibition-video__iframe" src="https://www.youtube.com/embed/YUZi6PzfN7U?si=r4EnsVy2L9tm-6Ms" title="Alexander Calder: Modern from the Start | MoMA EXHIBITION" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="exhibition-video__intro">Alexander Calder reimagined sculpture as an experiment in space and motion, upending centuries-old notions that sculpture should be static, grounded, and dense by making artworks that often move freely and interact with their surroundings. &ldquo;One of Calder&rsquo;s objects is like the sea,&rdquo; wrote the philosopher Jean-Paul Sartre, &ldquo;always beginning over again, always new.&rdquo; Bringing together early wire and wood figures, works on paper, jewelry, mobiles in motion, and monumental abstract sculptures, the exhibition takes a deep dive into the full breadth of Calder&rsquo;s career and inventiveness.</p>
+                <div class="exhibition-read-toggle">
+                    <p id="exhibition-calder-more" class="exhibition-calder-more">Drawn from MoMA&rsquo;s collection and augmented with key loans from the Calder Foundation, the exhibition celebrates one of the most beloved artists of the 20th century and presents rarely seen works, including the large-scale Man-Eater with Pennants, which will be on view in the Sculpture Garden for the first time in more than 50 years after new conservation.</p>
+                    <p class="exhibition-toggle-buttons">
+                        <button type="button" id="exhibition-read-more" class="exhibition-read-btn"><span>Read More</span></button>
+                        <button type="button" id="exhibition-read-less" class="exhibition-read-btn exhibition-read-btn--less"><span>Read Less</span></button>
+                    </p>
+                </div>
+            </section>
+
+            <p class="cta-wrap exhibitions-page-cta"><a href="buytickets.html" class="cta cta-lg">Ready to visit? - Get Your Tickets Here</a></p>
+        </main>
+
+        <div class="drawer-overlay drawer-overlay--backdrop" id="drawer-overlay" aria-hidden="true"></div>
+
+        <aside id="nav-drawer" class="aside-navigation nav-drawer" aria-hidden="true" aria-label="Site navigation">
+            <nav class="nav_bar drawer-nav" aria-label="Main pages">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html">Tickets</a>
+            </nav>
+        </aside>
+
+        <footer class="footer site-footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
